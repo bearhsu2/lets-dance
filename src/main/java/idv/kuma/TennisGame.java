@@ -27,7 +27,8 @@ public class TennisGame {
     }
 
     public String getResult() {
-        if (aPoint == 55) return "A Win";
+        if (aPoint == 55 && bPoint < 40) return "A Win";
+        if (aPoint == 55 && bPoint == 40) return "A+";
         if (bPoint == 55) return "B Win";
         if (aPoint == 40 && bPoint == 40) return "Deuce";
 

@@ -100,5 +100,14 @@ public class TennisGameTest {
         Assert.assertEquals("Deuce", game.getResult());
     }
 
+    @Test
+    public void When_ABABABA_Then_A_Plus() throws Exception {
+        TennisGame game = createGame();
+
+        game.a().b().a().b().a().b().a();
+
+        Assert.assertEquals("A+", game.getResult());
+    }
+
 
 }
