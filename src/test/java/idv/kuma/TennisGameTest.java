@@ -129,4 +129,23 @@ public class TennisGameTest {
     }
 
 
+    @Test
+    public void When_ABABABBB_Then_B_Win() throws Exception {
+        TennisGame game = createGame();
+
+        game.a().b().a().b().a().b().b().b();
+
+        Assert.assertEquals("B Win", game.getResult());
+    }
+
+    @Test
+    public void When_ABABABBAAA_Then_A_Win() throws Exception {
+        TennisGame game = createGame();
+
+        game.a().b().a().b().a().b().b().a().a().a();
+
+        Assert.assertEquals("A Win", game.getResult());
+    }
+
+
 }
