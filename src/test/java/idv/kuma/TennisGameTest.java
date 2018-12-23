@@ -91,14 +91,14 @@ public class TennisGameTest {
         Assert.assertEquals("30:30", game.getResult());
     }
 
-//    @Test
-//    public void When_ABABAB_Then_Deuce() throws Exception {
-//        TennisGame game = createGame();
-//
-//        game.a().b().a().b().a().b();
-//
-//        Assert.assertEquals("Deuce", game.getResult());
-//    }
+    @Test
+    public void When_ABABAB_Then_Deuce() throws Exception {
+        TennisGame game = createGame();
+
+        game.a().b().a().b().a().b();
+
+        Assert.assertEquals("Deuce", game.getResult());
+    }
 
 
 }
