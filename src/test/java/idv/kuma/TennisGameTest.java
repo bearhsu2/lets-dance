@@ -18,7 +18,7 @@ public class TennisGameTest {
     }
 
     @Test
-    public void test_A_Get_1_Score() throws Exception {
+    public void When_A_Then_15_0() throws Exception {
         TennisGame game = new TennisGame();
 
         game.a();
@@ -27,6 +27,19 @@ public class TennisGameTest {
 
 
         Assert.assertEquals("15:0", result);
+    }
+
+    @Test
+    public void When_AA_Then_30_0() throws Exception {
+        TennisGame game = new TennisGame();
+
+        game.a();
+        game.a();
+
+        String result = game.getResult();
+
+
+        Assert.assertEquals("30:0", result);
     }
 
 
