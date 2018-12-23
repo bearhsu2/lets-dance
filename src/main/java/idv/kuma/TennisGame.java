@@ -1,43 +1,66 @@
 package idv.kuma;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TennisGame {
 
-    TennisPoint aPoint = new TennisPoint();
-    TennisPoint bPoint = new TennisPoint();
 
+    Map<String, TennisPoint> nameToPoint = new HashMap<>();
+
+    public TennisGame() {
+        this.nameToPoint.put("A", new TennisPoint());
+        this.nameToPoint.put("B", new TennisPoint());
+
+    }
 
     public TennisGame a() {
-        aPoint.next();
+        getPoint("A").next();
         checkDeuce();
         return this;
     }
 
     public TennisGame b() {
-        bPoint.next();
+        getPoint("B").next();
         checkDeuce();
         return this;
     }
 
+    private TennisPoint getPoint(String name) {
+        return nameToPoint.get(name);
+    }
+
     private void checkDeuce() {
-        if (aPoint.getValue() == 55 && bPoint.getValue() == 55) {
-            aPoint.setValue(40);
-            bPoint.setValue(40);
+        if (getPoint("A").getValue() == 55 && getPoint("B").getValue() == 55) {
+            getPoint("A").setValue(40);
+            getPoint("B").setValue(40);
         }
     }
 
 
     public String getResult() {
-        if (aPoint.getValue() == 55 && bPoint.getValue() < 40) return "A Win";
-        if (aPoint.getValue() == 70 && bPoint.getValue() == 40) return "A Win";
-        if (aPoint.getValue() == 55 && bPoint.getValue() == 40) return "A+";
+        if (isWin("A", "B")) return "A Win";
+        if (isPlus("A", "B")) return "A+";
 
-        if (bPoint.getValue() == 55 && aPoint.getValue() < 40) return "B Win";
-        if (bPoint.getValue() == 70 && aPoint.getValue() == 40) return "B Win";
-        if (bPoint.getValue() == 55 && aPoint.getValue() == 40) return "B+";
+        if (isWin("B", "A")) return "B Win";
+        if (isPlus("B", "A")) return "B+";
 
-        if (aPoint.getValue() == 40 && bPoint.getValue() == 40) return "Deuce";
+        if (isDeuce("A","B")) return "Deuce";
 
-        return aPoint + ":" + bPoint;
+        return getPoint("A") + ":" + getPoint("B");
+    }
+
+    private boolean isDeuce(String name1, String name2) {
+        return getPoint(name1).getValue() == 40 && getPoint(name2).getValue() == 40;
+    }
+
+    private boolean isPlus(String name1, String b) {
+        return getPoint(name1).getValue() == 55 && getPoint(b).getValue() == 40;
+    }
+
+    private boolean isWin(String name1, String name2) {
+        return getPoint(name1).getValue() == 55 && getPoint(name2).getValue() < 40 ||
+                getPoint(name1).getValue() == 70 && getPoint(name2).getValue() == 40;
     }
 
     class TennisPoint {
