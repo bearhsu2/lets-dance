@@ -2,51 +2,63 @@ package idv.kuma;
 
 public class TennisGame {
 
-    int aPoint = 0;
-    int bPoint = 0;
+    TennisPoint aPoint = new TennisPoint();
+    TennisPoint bPoint = new TennisPoint();
 
 
     public TennisGame a() {
-        aPoint = getNext(aPoint);
+        aPoint.next();
+        checkDeuce();
+        return this;
+    }
+
+    public TennisGame b() {
+        bPoint.next();
         checkDeuce();
         return this;
     }
 
     private void checkDeuce() {
-        if (aPoint == 55 && bPoint == 55) {
-            aPoint = 40;
-            bPoint = 40;
+        if (aPoint.getValue() == 55 && bPoint.getValue() == 55) {
+            aPoint.setValue(40);
+            bPoint.setValue(40);
         }
     }
 
-
-    public TennisGame b() {
-        bPoint = getNext(bPoint);
-        checkDeuce();
-        return this;
-    }
-
-
-    private int getNext(int current) {
-        if (current == 30) {
-            return 40;
-        } else {
-            return current + 15;
-        }
-    }
 
     public String getResult() {
-        if (aPoint == 55 && bPoint < 40) return "A Win";
-        if (aPoint == 70 && bPoint == 40) return "A Win";
-        if (aPoint == 55 && bPoint == 40) return "A+";
+        if (aPoint.getValue() == 55 && bPoint.getValue() < 40) return "A Win";
+        if (aPoint.getValue() == 70 && bPoint.getValue() == 40) return "A Win";
+        if (aPoint.getValue() == 55 && bPoint.getValue() == 40) return "A+";
 
-        if (bPoint == 55 && aPoint < 40) return "B Win";
-        if (bPoint == 70 && aPoint == 40) return "B Win";
-        if (bPoint == 55 && aPoint == 40) return "B+";
+        if (bPoint.getValue() == 55 && aPoint.getValue() < 40) return "B Win";
+        if (bPoint.getValue() == 70 && aPoint.getValue() == 40) return "B Win";
+        if (bPoint.getValue() == 55 && aPoint.getValue() == 40) return "B+";
 
-        if (aPoint == 40 && bPoint == 40) return "Deuce";
+        if (aPoint.getValue() == 40 && bPoint.getValue() == 40) return "Deuce";
 
         return aPoint + ":" + bPoint;
+    }
+
+    class TennisPoint {
+        int value;
+
+        void next() {
+            value = value == 30 ? 40 : value + 15;
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        public void setValue(int value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "" + value;
+        }
     }
 }
 
