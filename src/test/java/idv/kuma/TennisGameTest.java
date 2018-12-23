@@ -8,38 +8,27 @@ import org.junit.Test;
 public class TennisGameTest {
 
 
-    @Before
-    public void setUp() throws Exception {
-
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
 
     @Test
     public void When_A_Then_15_0() throws Exception {
-        TennisGame game = new TennisGame();
+        TennisGame game = createGame();
 
         game.a();
+        
+        Assert.assertEquals("15:0", game.getResult());
+    }
 
-        String result = game.getResult();
-
-
-        Assert.assertEquals("15:0", result);
+    private TennisGame createGame() {
+        return new TennisGame();
     }
 
     @Test
     public void When_AA_Then_30_0() throws Exception {
-        TennisGame game = new TennisGame();
+        TennisGame game = createGame();
 
-        game.a();
-        game.a();
+        game.a().a();
 
-        String result = game.getResult();
-
-
-        Assert.assertEquals("30:0", result);
+        Assert.assertEquals("30:0", game.getResult());
     }
 
 

@@ -6,8 +6,9 @@ public class TennisGame {
     int bPoint = 0;
 
 
-    public void a() {
+    public TennisGame a() {
         aPoint += 15;
+        return this;
     }
 
     public String getResult() {
