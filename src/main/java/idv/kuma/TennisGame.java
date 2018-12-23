@@ -45,7 +45,7 @@ public class TennisGame {
         if (isWin("B", "A")) return "B Win";
         if (isPlus("B", "A")) return "B+";
 
-        if (isDeuce("A","B")) return "Deuce";
+        if (isDeuce("A", "B")) return "Deuce";
 
         return getPoint("A") + ":" + getPoint("B");
     }
