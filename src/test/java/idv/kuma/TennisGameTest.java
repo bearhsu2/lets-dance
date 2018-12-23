@@ -82,5 +82,23 @@ public class TennisGameTest {
         Assert.assertEquals("B Win", game.getResult());
     }
 
+    @Test
+    public void When_ABAB_Then_30_30() throws Exception {
+        TennisGame game = createGame();
+
+        game.a().b().a().b();
+
+        Assert.assertEquals("30:30", game.getResult());
+    }
+
+//    @Test
+//    public void When_ABABAB_Then_Deuce() throws Exception {
+//        TennisGame game = createGame();
+//
+//        game.a().b().a().b().a().b();
+//
+//        Assert.assertEquals("Deuce", game.getResult());
+//    }
+
 
 }
