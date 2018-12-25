@@ -92,6 +92,17 @@ public class TennisGameTest {
 
     }
 
+    @Test
+    public void When_AAABBBA_Then_A_Plus() throws Exception {
+
+        TennisGame game = createTennisGame();
+
+        game.a().a().a().b().b().b().a();
+
+        Assert.assertEquals("A Plus", game.getScores());
+
+    }
+
     private TennisGame createTennisGame() {
         return new TennisGame();
     }
