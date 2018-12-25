@@ -28,20 +28,22 @@ public class TennisGame {
         aHits++;
 
 
+        tryJumpBackToDeuce();
+        return this;
+    }
+
+    private void tryJumpBackToDeuce() {
         if (aHits == 4 && bHits == 4) {
             aHits = 3;
             bHits = 3;
         }
-        return this;
     }
 
     public TennisGame b() {
         bHits++;
 
-        if (aHits == 4 && bHits == 4) {
-            aHits = 3;
-            bHits = 3;
-        }
+        tryJumpBackToDeuce();
+
         return this;
     }
 
