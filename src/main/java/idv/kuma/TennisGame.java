@@ -37,6 +37,8 @@ public class TennisGame {
     public String getScores() {
 
         if (aHits == 4) return "A Wins";
+        if (bHits == 4) return "B Wins";
+
         if (aHits == 3 && bHits == 3) return "Deuce";
 
         return getPoints(aHits) + ":" + getPoints(bHits);
