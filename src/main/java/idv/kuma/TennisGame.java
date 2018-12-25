@@ -42,24 +42,34 @@ public class TennisGame {
     public TennisGame b() {
         bHits++;
 
-        tryJumpBackToDeuce();
+        if (aHits == 4 && bHits == 4) {
+            aHits = 3;
+            bHits = 3;
+        }
 
         return this;
     }
 
     public String getScores() {
 
-        if (aHits == 4 && bHits < 3) return "A Wins";
-        if (aHits == 4 && bHits == 3) return "A Plus";
+        if (checkWin(aHits, bHits)) return "A Wins";
+        if (checkPlus(aHits, bHits)) return "A Plus";
 
-        if (bHits == 4 && aHits < 3) return "B Wins";
-        if (bHits == 4 && aHits == 3) return "B Plus";
-
-
+        if (checkWin(bHits, aHits)) return "B Wins";
+        if (checkPlus(bHits, aHits)) return "B Plus";
+        
         if (aHits == 3 && bHits == 3) return "Deuce";
 
         return getPoints(aHits) + ":" + getPoints(bHits);
 
+    }
+
+    private boolean checkPlus(int hit1, int hit2) {
+        return hit1 == 4 && hit2 == 3;
+    }
+
+    private boolean checkWin(int hit1, int hit2) {
+        return hit1 == 4 && hit2 < 3;
     }
 
 }
