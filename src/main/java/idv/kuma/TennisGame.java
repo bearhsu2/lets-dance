@@ -26,20 +26,33 @@ public class TennisGame {
 
     public TennisGame a() {
         aHits++;
+
+
+        if (aHits == 4 && bHits == 4) {
+            aHits = 3;
+            bHits = 3;
+        }
         return this;
     }
 
     public TennisGame b() {
         bHits++;
+
+        if (aHits == 4 && bHits == 4) {
+            aHits = 3;
+            bHits = 3;
+        }
         return this;
     }
 
     public String getScores() {
 
-        if (aHits == 4 && bHits != 3) return "A Wins";
+        if (aHits == 4 && bHits < 3) return "A Wins";
         if (aHits == 4 && bHits == 3) return "A Plus";
 
-        if (bHits == 4) return "B Wins";
+        if (bHits == 4 && aHits < 3) return "B Wins";
+        if (bHits == 4 && aHits == 3) return "B Plus";
+
 
         if (aHits == 3 && bHits == 3) return "Deuce";
 

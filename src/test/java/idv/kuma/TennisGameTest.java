@@ -103,6 +103,17 @@ public class TennisGameTest {
 
     }
 
+    @Test
+    public void When_AAABBBAB_Then_Deuce() throws Exception {
+
+        TennisGame game = createTennisGame();
+
+        game.a().a().a().b().b().b().a().b();
+
+        Assert.assertEquals("Deuce", game.getScores());
+
+    }
+
     private TennisGame createTennisGame() {
         return new TennisGame();
     }
