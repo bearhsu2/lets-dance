@@ -6,28 +6,23 @@ import java.util.Map;
 public class TennisGame {
 
 
-    private static Map<Integer, String> numHitsToPoints = new HashMap<>();
     private int aHits = 0;
     private int bHits = 0;
 
+    private static Map<Integer, String> numHitsToPoints = new HashMap<>();
     {
         numHitsToPoints.put(0, "0");
         numHitsToPoints.put(1, "15");
         numHitsToPoints.put(2, "30");
         numHitsToPoints.put(3, "40");
-
     }
 
     private static String getPoints(int hits) {
-
-
         return numHitsToPoints.get(hits);
     }
 
     public TennisGame a() {
         aHits++;
-
-
         tryJumpBackToDeuce();
         return this;
     }
@@ -42,11 +37,8 @@ public class TennisGame {
     public TennisGame b() {
         bHits++;
 
-        if (aHits == 4 && bHits == 4) {
-            aHits = 3;
-            bHits = 3;
-        }
-
+        tryJumpBackToDeuce();
+        
         return this;
     }
 
