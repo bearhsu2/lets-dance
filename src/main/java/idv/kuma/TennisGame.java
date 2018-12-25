@@ -57,11 +57,15 @@ public class TennisGame {
 
         if (checkWin(bHits, aHits)) return "B Wins";
         if (checkPlus(bHits, aHits)) return "B Plus";
-        
-        if (aHits == 3 && bHits == 3) return "Deuce";
+
+        if (checkDeuce(aHits, bHits)) return "Deuce";
 
         return getPoints(aHits) + ":" + getPoints(bHits);
 
+    }
+
+    private boolean checkDeuce(int hit1, int hit2) {
+        return hit1 == 3 && hit2 == 3;
     }
 
     private boolean checkPlus(int hit1, int hit2) {
