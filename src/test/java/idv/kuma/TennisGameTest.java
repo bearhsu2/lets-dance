@@ -28,6 +28,17 @@ public class TennisGameTest {
 
     }
 
+    @Test
+    public void When_AAA_Then_40_0() throws Exception {
+
+        TennisGame game = createTennisGame();
+
+        game.a().a().a();
+
+        Assert.assertEquals("40:0", game.getScores());
+
+    }
+
     private TennisGame createTennisGame() {
         return new TennisGame();
     }
