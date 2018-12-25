@@ -7,6 +7,15 @@ public class TennisGameTest {
 
 
     @Test
+    public void When_Init_Then_0_0() throws Exception {
+
+        TennisGame game = createTennisGame();
+
+
+        Assert.assertEquals("0:0", game.getScores());
+
+    }
+    @Test
     public void When_A_Then_15_0() throws Exception {
 
         TennisGame game = createTennisGame();
