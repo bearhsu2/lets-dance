@@ -26,10 +26,17 @@ public class TennisGame {
     }
 
     public String getScores() {
+
+        if (aHits == 4) {return "A Wins";}
+
+
         return getPoints(aHits) + ":" + getPoints(bHits);
+
     }
 
     private static String getPoints(int hits) {
+
+
         return numHitsToPoints.get(hits);
     }
 
