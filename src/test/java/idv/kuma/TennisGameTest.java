@@ -59,6 +59,17 @@ public class TennisGameTest {
 
     }
 
+    @Test
+    public void When_AAABB_Then_40_30() throws Exception {
+
+        TennisGame game = createTennisGame();
+
+        game.a().a().a().b().b();
+
+        Assert.assertEquals("40:30", game.getScores());
+
+    }
+
     private TennisGame createTennisGame() {
         return new TennisGame();
     }

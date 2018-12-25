@@ -6,10 +6,9 @@ import java.util.Map;
 public class TennisGame {
 
 
+    private static Map<Integer, String> numHitsToPoints = new HashMap<>();
     private int aHits = 0;
     private int bHits = 0;
-
-    private static Map<Integer, String> numHitsToPoints = new HashMap<>();
 
     {
         numHitsToPoints.put(0, "0");
@@ -19,26 +18,31 @@ public class TennisGame {
 
     }
 
-
-    public TennisGame a() {
-        aHits ++;
-        return this;
-    }
-
-    public String getScores() {
-
-        if (aHits == 4) {return "A Wins";}
-
-
-        return getPoints(aHits) + ":" + getPoints(bHits);
-
-    }
-
     private static String getPoints(int hits) {
 
 
         return numHitsToPoints.get(hits);
     }
 
+    public TennisGame a() {
+        aHits++;
+        return this;
+    }
+
+    public TennisGame b() {
+        bHits++;
+        return this;
+    }
+
+    public String getScores() {
+
+        if (aHits == 4) {
+            return "A Wins";
+        }
+
+
+        return getPoints(aHits) + ":" + getPoints(bHits);
+
+    }
 
 }
