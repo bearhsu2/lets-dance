@@ -24,81 +24,9 @@ public class TennisGameTest {
 
         game.a();
 
-        checkScore("15:0");
+        Assert.assertEquals("15:0", game.show());
 
     }
-
-
-    @Test
-    public void When_AA_Then_30_0() throws Exception {
-
-        game.a().a();
-
-        checkScore("30:0");
-
-    }
-
-    @Test
-    public void When_AAA_Then_40_0() throws Exception {
-
-        game.a().a().a();
-
-        checkScore("40:0");
-
-    }
-
-    @Test
-    public void When_AAAA_Then_A_Wins() throws Exception {
-
-        game.a().a().a().a();
-
-        checkScore("A Wins");
-
-    }
-
-    @Test
-    public void When_AAABBB_Then_Deuce() throws Exception {
-
-        game.a().a().a().b().b().b();
-
-        checkScore("Deuce");
-
-    }
-
-    @Test
-    public void When_AAABBBA_Then_A_Plus() throws Exception {
-
-        game.a().a().a().b().b().b().a();
-
-        checkScore("A Plus");
-
-    }
-
-    @Test
-    public void When_AAABBBAA_Then_A_Wins() throws Exception {
-
-        game.a().a().a().b().b().b().a().a();
-
-        checkScore("A Wins");
-
-    }
-
-    @Test
-    public void When_AAABBBAB_Then_Deuce() throws Exception {
-
-        game.a().a().a().b().b().b().a().b();
-
-        checkScore("Deuce");
-
-    }
-
-    private void checkScore(String expected) {
-        Assert.assertEquals(expected, game.show());
-    }
-
-
-
-
 
 
 }
