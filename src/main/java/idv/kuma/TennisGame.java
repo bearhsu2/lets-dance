@@ -1,21 +1,33 @@
 package idv.kuma;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TennisGame {
 
-    int aPoints = 0;
-    int bPoints = 0;
+    static Map<Integer, Integer> hitsToScore = new HashMap<>();
+
+    static {
+        hitsToScore.put(0, 0);
+        hitsToScore.put(1, 15);
+        hitsToScore.put(2, 30);
+        hitsToScore.put(3, 40);
+    }
+
+    int aHits = 0;
+    int bHits = 0;
 
     public TennisGame a() {
-        aPoints += 15;
+        aHits++;
         return this;
     }
 
     public TennisGame b() {
-        bPoints += 15;
+        bHits++;
         return this;
     }
 
     public String show() {
-        return aPoints + ":" + bPoints;
+        return hitsToScore.get(aHits) + ":" + hitsToScore.get(bHits);
     }
 }
