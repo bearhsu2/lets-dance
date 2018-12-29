@@ -28,6 +28,9 @@ public class TennisGame {
     }
 
     public String show() {
+
+        if (aHits == 3 && bHits == 3){ return "Deuce";}
+
         return hitsToScore.get(aHits) + ":" + hitsToScore.get(bHits);
     }
 }
