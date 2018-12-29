@@ -20,10 +20,7 @@ public class TennisGame {
     public TennisGame a() {
         aHits++;
 
-        if (aHits == 4 && bHits == 4){
-            aHits = 3;
-            bHits = 3;
-        }
+        checkDeuce();
 
         return this;
     }
@@ -32,12 +29,16 @@ public class TennisGame {
         bHits++;
 
 
+        checkDeuce();
+
+        return this;
+    }
+
+    private void checkDeuce() {
         if (aHits == 4 && bHits == 4){
             aHits = 3;
             bHits = 3;
         }
-        
-        return this;
     }
 
     public String show() {
