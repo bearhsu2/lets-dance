@@ -78,6 +78,16 @@ public class TennisGameTest {
 
     }
 
+    @Test
+    public void When_AAABBBAA_Then_A_Wins() throws Exception {
+        TennisGame game = new TennisGame();
+
+        game.a().a().a().b().b().b().a().a();
+
+        checkScore("A Wins", game);
+
+    }
+
     private void checkScore(String expected, TennisGame game) {
         Assert.assertEquals(expected, game.show());
     }

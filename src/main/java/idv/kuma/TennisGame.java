@@ -34,8 +34,10 @@ public class TennisGame {
         }
 
         if (aHits == 4) return (bHits < 3 ? "A Wins" : "A Plus");
-
         if (bHits == 4) return (aHits < 3 ? "B Wins" : "B Plus");
+
+        if (aHits == 5) return "A Wins";
+        if (bHits == 5) return "B Wins";
 
         return hitsToScore.get(aHits) + ":" + hitsToScore.get(bHits);
     }
