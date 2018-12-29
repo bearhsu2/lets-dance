@@ -23,9 +23,7 @@ public class TennisGameTest {
 
         game.a();
 
-        String score = game.show();
-
-        Assert.assertEquals("15:0", score);
+        checkScore("15:0", game);
 
     }
 
@@ -36,10 +34,12 @@ public class TennisGameTest {
 
         game.a().a();
 
-        String score = game.show();
+        checkScore("30:0", game);
 
-        Assert.assertEquals("30:0", score);
+    }
 
+    private void checkScore(String expected, TennisGame game) {
+        Assert.assertEquals(expected, game.show());
     }
 
 
