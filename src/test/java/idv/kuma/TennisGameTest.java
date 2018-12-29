@@ -49,6 +49,16 @@ public class TennisGameTest {
     }
 
     @Test
+    public void When_AAAA_Then_A_Wins() throws Exception {
+        TennisGame game = new TennisGame();
+
+        game.a().a().a().a();
+
+        checkScore("A Wins", game);
+
+    }
+
+    @Test
     public void When_AAABBB_Then_Deuce() throws Exception {
         TennisGame game = new TennisGame();
 
