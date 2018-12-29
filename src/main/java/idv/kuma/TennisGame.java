@@ -5,12 +5,14 @@ public class TennisGame {
     int aPoints = 0;
     int bPoints = 0;
 
-    public void a() {
+    public TennisGame a() {
         aPoints += 15;
+        return this;
     }
 
-    public void b() {
+    public TennisGame b() {
         bPoints += 15;
+        return this;
     }
 
     public String show() {

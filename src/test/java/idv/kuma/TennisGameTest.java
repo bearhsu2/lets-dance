@@ -34,14 +34,15 @@ public class TennisGameTest {
     public void When_AA_Then_30_0() throws Exception {
         TennisGame game = new TennisGame();
 
-        game.a();
-        game.a();
+        game.a().a();
 
         String score = game.show();
 
         Assert.assertEquals("30:0", score);
 
     }
+
+
 
 
 
