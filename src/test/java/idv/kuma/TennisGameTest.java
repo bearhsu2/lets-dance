@@ -8,24 +8,23 @@ import org.junit.Test;
 public class TennisGameTest {
 
 
-    TennisGame game;
 
     @Before
     public void setUp() throws Exception {
-        game = new TennisGame();
     }
 
     @After
     public void tearDown() throws Exception {
     }
     @Test
-    public void test_A_Get_1_Score() throws Exception {
-        game.aGetScore();
+    public void When_A_Then_15_0() throws Exception {
+        TennisGame game = new TennisGame();
 
-        String[] scores = game.getCurrentScores();
+        game.a();
 
-        Assert.assertEquals("15", scores[0]);
-        Assert.assertEquals("0", scores[1]);
+        String score = game.show();
+
+        Assert.assertEquals("15:0", score);
 
     }
 
