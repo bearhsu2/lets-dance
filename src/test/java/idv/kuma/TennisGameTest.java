@@ -50,5 +50,15 @@ public class TennisGameTest {
 
     }
 
+    @Test
+    public void When_AAAA_Then_A_WINS() throws Exception {
+
+
+        game.a().a().a().a();
+
+        Assert.assertEquals("A Wins", game.show());
+
+    }
+
 
 }
