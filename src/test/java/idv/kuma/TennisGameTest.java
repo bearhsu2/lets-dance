@@ -12,7 +12,6 @@ public class TennisGameTest {
 
     @Before
     public void setUp() throws Exception {
-        this.game = new TennisGame();
     }
 
     @After
@@ -22,9 +21,23 @@ public class TennisGameTest {
     @Test
     public void When_A_Then_15_0() throws Exception {
 
+        this.game = new TennisGame();
+
         game.a();
 
         Assert.assertEquals("15:0", game.show());
+
+    }
+
+    @Test
+    public void When_AA_Then_30_0() throws Exception {
+
+        this.game = new TennisGame();
+
+        game.a();
+        game.a();
+
+        Assert.assertEquals("30:0", game.show());
 
     }
 
