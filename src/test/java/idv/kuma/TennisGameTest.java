@@ -40,5 +40,16 @@ public class TennisGameTest {
 
     }
 
+    @Test
+    public void When_AAA_Then_40_0() throws Exception {
+
+        this.game = new TennisGame();
+
+        game.a().a().a();
+
+        Assert.assertEquals("40:0", game.show());
+
+    }
+
 
 }
