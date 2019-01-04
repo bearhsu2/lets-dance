@@ -12,6 +12,7 @@ public class TennisGameTest {
 
     @Before
     public void setUp() throws Exception {
+        this.game = new TennisGame();
     }
 
     @After
@@ -21,7 +22,7 @@ public class TennisGameTest {
     @Test
     public void When_A_Then_15_0() throws Exception {
 
-        this.game = new TennisGame();
+
 
         game.a();
 
@@ -32,7 +33,6 @@ public class TennisGameTest {
     @Test
     public void When_AA_Then_30_0() throws Exception {
 
-        this.game = new TennisGame();
 
         game.a().a();
 
@@ -43,7 +43,6 @@ public class TennisGameTest {
     @Test
     public void When_AAA_Then_40_0() throws Exception {
 
-        this.game = new TennisGame();
 
         game.a().a().a();
 

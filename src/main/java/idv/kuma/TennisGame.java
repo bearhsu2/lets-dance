@@ -13,7 +13,6 @@ public class TennisGame {
 
 
     {
-
         hitsToScore.put(0, 0);
         hitsToScore.put(1, 15);
         hitsToScore.put(2, 30);
