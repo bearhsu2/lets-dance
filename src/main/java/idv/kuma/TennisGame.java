@@ -6,12 +6,14 @@ public class TennisGame {
     private int aHits = 0;
     private int bHits = 0;
 
-    public void a() {
+    public TennisGame a() {
         aHits++;
+        return this;
     }
 
-    public void b() {
+    public TennisGame b() {
         bHits++;
+        return this;
     }
 
     public String show() {

@@ -34,8 +34,7 @@ public class TennisGameTest {
 
         this.game = new TennisGame();
 
-        game.a();
-        game.a();
+        game.a().a();
 
         Assert.assertEquals("30:0", game.show());
 
