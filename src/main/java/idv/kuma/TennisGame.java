@@ -22,7 +22,14 @@ public class TennisGame {
 
         if (checkDeuce()) return "Deuce";
 
+        if(checkAdv(aHit, bHit)) return "A Adv";
+        if(checkAdv(bHit, aHit)) return "B Adv";
+
         return hitToScore.get(aHit) + " : " + hitToScore.get(bHit);
+    }
+
+    private boolean checkAdv(int hit, int anotherHit) {
+        return hit == 4 && anotherHit == 3;
     }
 
     private boolean checkDeuce() {
