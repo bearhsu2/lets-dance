@@ -21,13 +21,17 @@ public class TennisGame {
     public String getScore() {
 
         if (checkDeuce()) return "Deuce";
-
         if (checkAdv(aHit, bHit)) return "A Adv";
-
         if (checkAdv(bHit, aHit)) return "B Adv";
+        if (checkWin(aHit, bHit)) return "A Wins";
+        if (checkWin(bHit, aHit)) return "B Wins";
 
 
         return hitToScore.get(aHit) + " : " + hitToScore.get(bHit);
+    }
+
+    private boolean checkWin(int hit, int anotherHit) {
+        return hit >= 4 && anotherHit <= 3;
     }
 
     private boolean checkAdv(int hit, int anotherHit) {
@@ -55,7 +59,7 @@ public class TennisGame {
 
     public TennisGame b() {
         bHit++;
-        
+
         attemptBackToDeuce();
 
         return this;
