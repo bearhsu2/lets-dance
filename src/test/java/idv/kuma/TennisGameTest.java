@@ -11,4 +11,13 @@ public class TennisGameTest {
 
         Assert.assertEquals("0 : 0", game.getScore());
     }
+
+    @Test
+    public void When_A_Then_15_0() {
+        TennisGame game = new TennisGame();
+
+        game.a();
+
+        Assert.assertEquals("15 : 0", game.getScore());
+    }
 }

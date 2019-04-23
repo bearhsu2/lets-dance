@@ -6,7 +6,13 @@ import java.util.Map;
 public class TennisGame {
 
 
+    private int aHit = 0;
+
     public String getScore() {
-        return "0 : 0";
+        return aHit * 15 + " : 0";
+    }
+
+    public void a() {
+        aHit++;
     }
 }
