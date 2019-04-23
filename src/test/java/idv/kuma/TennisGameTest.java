@@ -5,19 +5,49 @@ import org.junit.Test;
 
 public class TennisGameTest {
 
+    private TennisGame game;
+
     @Test
     public void When_Init_Then_0_0() {
-        TennisGame game = new TennisGame();
+        game = new TennisGame();
 
         Assert.assertEquals("0 : 0", game.getScore());
     }
 
     @Test
     public void When_A_Then_15_0() {
-        TennisGame game = new TennisGame();
+        game = new TennisGame();
 
         game.a();
 
         Assert.assertEquals("15 : 0", game.getScore());
+    }
+
+
+    @Test
+    public void When_B_Then_0_15() {
+        game = new TennisGame();
+
+        game.b();
+
+        Assert.assertEquals("0 : 15", game.getScore());
+    }
+
+    @Test
+    public void When_AAA_Then_40_0() {
+        game = new TennisGame();
+
+        game.a().a().a();
+
+        Assert.assertEquals("40 : 0", game.getScore());
+    }
+
+    @Test
+    public void When_BBB_Then_0_40() {
+        game = new TennisGame();
+
+        game.b().b().b();
+
+        Assert.assertEquals("0 : 40", game.getScore());
     }
 }
