@@ -22,8 +22,10 @@ public class TennisGame {
 
         if (checkDeuce()) return "Deuce";
 
-        if(checkAdv(aHit, bHit)) return "A Adv";
-        if(checkAdv(bHit, aHit)) return "B Adv";
+        if (checkAdv(aHit, bHit)) return "A Adv";
+
+        if (checkAdv(bHit, aHit)) return "B Adv";
+
 
         return hitToScore.get(aHit) + " : " + hitToScore.get(bHit);
     }
@@ -38,6 +40,12 @@ public class TennisGame {
 
     public TennisGame a() {
         aHit++;
+
+        if (aHit == 4 && bHit == 4) {
+            aHit = 3;
+            bHit = 3;
+        }
+
         return this;
     }
 
