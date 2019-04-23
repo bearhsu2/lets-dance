@@ -19,7 +19,14 @@ public class TennisGame {
     private int bHit = 0;
 
     public String getScore() {
+
+        if (checkDeuce()) return "Deuce";
+
         return hitToScore.get(aHit) + " : " + hitToScore.get(bHit);
+    }
+
+    private boolean checkDeuce() {
+        return aHit == 3 && bHit == 3;
     }
 
     public TennisGame a() {

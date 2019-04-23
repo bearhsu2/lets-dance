@@ -50,4 +50,13 @@ public class TennisGameTest {
 
         Assert.assertEquals("0 : 40", game.getScore());
     }
+
+    @Test
+    public void When_AAABBB_Then_Deuce() {
+        game = new TennisGame();
+
+        game.a().a().a().b().b().b();
+
+        Assert.assertEquals("Deuce", game.getScore());
+    }
 }
