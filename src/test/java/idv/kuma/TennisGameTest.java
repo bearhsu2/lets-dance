@@ -85,4 +85,13 @@ public class TennisGameTest {
 
         Assert.assertEquals("Deuce", game.getScore());
     }
+
+    @Test
+    public void When_AAABBBAB_Then_Deuce() {
+        game = new TennisGame();
+
+        game.a().a().a().b().b().b().a().b();
+
+        Assert.assertEquals("Deuce", game.getScore());
+    }
 }

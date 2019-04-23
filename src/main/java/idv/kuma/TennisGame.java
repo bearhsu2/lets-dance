@@ -41,16 +41,23 @@ public class TennisGame {
     public TennisGame a() {
         aHit++;
 
-        if (aHit == 4 && bHit == 4) {
-            aHit = 3;
-            bHit = 3;
-        }
+        attemptBackToDeuce();
 
         return this;
     }
 
+    private void attemptBackToDeuce() {
+        if (aHit == 4 && bHit == 4) {
+            aHit = 3;
+            bHit = 3;
+        }
+    }
+
     public TennisGame b() {
         bHit++;
+        
+        attemptBackToDeuce();
+
         return this;
     }
 }
