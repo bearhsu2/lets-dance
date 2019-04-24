@@ -2,8 +2,8 @@ package idv.kuma;
 
 public class TennisGame {
 
-    int a;
-    int b;
+    int aHits;
+    int bHits;
 
 
     public String getScore() {
@@ -11,11 +11,11 @@ public class TennisGame {
     }
 
     private int getB() {
-        if (b == 0) {
+        if (bHits == 0) {
             return 0;
-        } else if (b == 1) {
+        } else if (bHits == 1) {
             return 15;
-        } else if (b == 2) {
+        } else if (bHits == 2) {
             return 30;
         } else {
             return 40;
@@ -23,11 +23,11 @@ public class TennisGame {
     }
 
     private int getA() {
-        if (a == 0) {
+        if (aHits == 0) {
             return 0;
-        } else if (a == 1) {
+        } else if (aHits == 1) {
             return 15;
-        } else if (a == 2) {
+        } else if (aHits == 2) {
             return 30;
         } else {
             return 40;
@@ -35,12 +35,12 @@ public class TennisGame {
     }
 
     public TennisGame a() {
-        a++;
+        aHits++;
         return this;
     }
 
     public TennisGame b() {
-        b++;
+        bHits++;
         return this;
     }
 }
