@@ -20,7 +20,7 @@ public class TennisGameTest {
 
         Assert.assertEquals("15 : 0", game.getScore());
     }
-    
+
     @Test
     public void AA_30_0() {
         TennisGame game = new TennisGame();
@@ -37,5 +37,25 @@ public class TennisGameTest {
         game.a().a().a();
 
         Assert.assertEquals("40 : 0", game.getScore());
+    }
+
+
+    @Test
+    public void B_0_15() {
+        TennisGame game = new TennisGame();
+
+        game.b();
+
+        Assert.assertEquals("0 : 15", game.getScore());
+    }
+
+
+    @Test
+    public void BBB_0_40() {
+        TennisGame game = new TennisGame();
+
+        game.b().b().b();
+
+        Assert.assertEquals("0 : 40", game.getScore());
     }
 }
