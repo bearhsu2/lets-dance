@@ -5,5 +5,10 @@ import org.junit.Test;
 
 public class TennisGameTest {
 
-    
+    @Test
+    public void Init_0_0() {
+        TennisGame game = new TennisGame();
+
+        Assert.assertEquals("0 : 0", game.getScore());
+    }
 }
