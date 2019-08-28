@@ -3,7 +3,7 @@ package idv.kuma;
 /**
  * Hello world!
  */
-public class SalaryService {
+public class PaymentService {
 
 
     public double getAll() {
