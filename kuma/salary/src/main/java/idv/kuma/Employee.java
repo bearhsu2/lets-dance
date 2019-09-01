@@ -12,8 +12,12 @@ public class Employee {
     int hours;
 
 
-    public Employee(double annualPay) {
-        this.annualPay = annualPay;
+    public Employee(AnnualPay annualPay) {
+        this.annualPay = annualPay.getAnnualPay();
+    }
+
+    public Employee(MonthlyPay monthlyPay) {
+        this.monthlyPay = monthlyPay.getMonthlyPay();
     }
 
     public String getName() {

@@ -20,7 +20,7 @@ public class PaymentServiceTest {
     public void When_Annual_Then_Direct_AnnualPay() {
 
         EmployeeRepo mockedEmployeeRepo = prepareEmployeeRepo(
-                new Employee(300)
+                new Employee(new AnnualPay(300))
         );
 
 
@@ -34,7 +34,7 @@ public class PaymentServiceTest {
     public void When_Monthly_Then_MonthlyPay_Times_12() {
 
 
-        Employee employee = new Employee(0);
+        Employee employee = new Employee(new AnnualPay(0));
         employee.setMonthlyPay(10);
         EmployeeRepo mockedEmployeeRepo = prepareEmployeeRepo(
                 employee
