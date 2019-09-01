@@ -1,7 +1,5 @@
 package idv.kuma;
 
-import java.util.List;
-
 /**
  * Hello world!
  */
@@ -15,7 +13,15 @@ public class PaymentService {
 
     public double getAll() {
 
-        double pay = employeeRepo.getAll().get(0).getAnnualPay();
+
+        Employee employee = employeeRepo.getAll().get(0);
+
+        double pay = 0;
+        if (employee.getAnnualPay() > 0) {
+            pay = employee.getAnnualPay();
+        } else {
+            pay = employee.getMonthlyPay() * 12;
+        }
 
         return pay;
 

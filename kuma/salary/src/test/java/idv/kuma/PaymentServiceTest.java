@@ -5,7 +5,6 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import java.util.Arrays;
-import java.util.List;
 
 import static org.mockito.Mockito.when;
 
@@ -28,6 +27,23 @@ public class PaymentServiceTest {
         PaymentService paymentService = new PaymentService(mockedEmployeeRepo);
 
         Assert.assertEquals(300, paymentService.getAll(), DELTA);
+    }
+
+
+    @Test
+    public void When_Monthly_Then_MonthlyPay_Times_12() {
+
+
+        Employee employee = new Employee(0);
+        employee.setMonthlyPay(10);
+        EmployeeRepo mockedEmployeeRepo = prepareEmployeeRepo(
+                employee
+        );
+
+
+        PaymentService paymentService = new PaymentService(mockedEmployeeRepo);
+
+        Assert.assertEquals(120, paymentService.getAll(), DELTA);
     }
 
     private EmployeeRepo prepareEmployeeRepo(Employee... employees) {
