@@ -28,6 +28,17 @@ public class PaymentServiceTest {
         runAndCheck(300);
     }
 
+    @Test
+    public void When_Monthly_Then_MonthlyPay_Times_12() {
+
+
+        prepareEmployRepo(
+                new Employee(new MonthlyPay(10))
+        );
+
+        runAndCheck(120);
+    }
+
     private void prepareEmployRepo(Employee... employees) {
         mockedEmployeeRepo = Mockito.mock(EmployeeRepo.class);
 
@@ -44,16 +55,5 @@ public class PaymentServiceTest {
         Assert.assertEquals(expectedPayment, paymentService.getAll(), DELTA);
     }
 
-
-    @Test
-    public void When_Monthly_Then_MonthlyPay_Times_12() {
-
-
-        prepareEmployRepo(
-                new Employee(new MonthlyPay(10))
-        );
-
-        runAndCheck(120);
-    }
 
 }
