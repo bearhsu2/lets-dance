@@ -15,6 +15,8 @@ import static org.mockito.Mockito.when;
 public class PaymentServiceTest {
 
 
+    private final double DELTA = 0.001;
+
     @Test
     public void When_Annual_Then_Direct_AnnualPay() {
 
@@ -25,7 +27,7 @@ public class PaymentServiceTest {
 
         PaymentService paymentService = new PaymentService(mockedEmployeeRepo);
 
-        Assert.assertEquals(300, paymentService.getAll(), 0.001);
+        Assert.assertEquals(300, paymentService.getAll(), DELTA);
     }
 
     private EmployeeRepo prepareEmployeeRepo(Employee... employees) {
