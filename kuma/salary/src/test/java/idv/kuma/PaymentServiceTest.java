@@ -51,6 +51,19 @@ public class PaymentServiceTest {
         runAndCheck(900);
     }
 
+    @Test
+    public void Multiple_Employees() {
+
+
+        prepareEmployRepo(
+                new AnnuallyPaidEmployee(new AnnualPay(300)),
+                new MonthlyPaidEmployee(new MonthlyPay(10)),
+                new HourlyPaidEmployee(new HourlyPay(100), 9)
+        );
+
+        runAndCheck(300 + 120 + 900);
+    }
+
     private void prepareEmployRepo(Employee... employees) {
         mockedEmployeeRepo = Mockito.mock(EmployeeRepo.class);
 

@@ -14,10 +14,13 @@ public class PaymentService {
     }
 
     public double getAll() {
+        
+        return employeeRepo
+                .getAll()
+                .stream()
+                .mapToDouble(Employee::getPay)
+                .sum();
 
-        Employee employee = employeeRepo.getAll().get(0);
-
-        return employee.getPay();
 
     }
 
