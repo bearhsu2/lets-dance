@@ -1,9 +1,9 @@
-package idv.kuma;
+package idv.kuma.employee;
 
-public class AnnualPay {
+public class MonthlyPay {
     private final double amount;
 
-    public AnnualPay(double amount) {
+    public MonthlyPay(double amount) {
         this.amount = amount;
     }
 

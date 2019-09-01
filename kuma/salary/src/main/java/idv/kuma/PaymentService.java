@@ -1,5 +1,7 @@
 package idv.kuma;
 
+import idv.kuma.employee.Employee;
+
 /**
  * Hello world!
  */
@@ -12,7 +14,6 @@ public class PaymentService {
     }
 
     public double getAll() {
-
 
         Employee employee = employeeRepo.getAll().get(0);
 

@@ -1,4 +1,4 @@
-package idv.kuma;
+package idv.kuma.employee;
 
 public class AnnuallyPaidEmployee implements Employee {
 

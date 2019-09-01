@@ -1,5 +1,6 @@
 package idv.kuma;
 
+import idv.kuma.employee.*;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
