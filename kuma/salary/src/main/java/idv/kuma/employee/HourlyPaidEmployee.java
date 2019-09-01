@@ -1,6 +1,4 @@
-package idv.kuma;
-
-import idv.kuma.employee.Employee;
+package idv.kuma.employee;
 
 public class HourlyPaidEmployee implements Employee {
 
