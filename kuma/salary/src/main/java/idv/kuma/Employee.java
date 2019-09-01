@@ -59,4 +59,17 @@ public class Employee {
     public void setHours(int hours) {
         this.hours = hours;
     }
+
+    double getPay() {
+
+        double pay = 0;
+        
+
+        if (getAnnualPay() > 0) {
+            pay = getAnnualPay();
+        } else {
+            pay = getMonthlyPay() * 12;
+        }
+        return pay;
+    }
 }
