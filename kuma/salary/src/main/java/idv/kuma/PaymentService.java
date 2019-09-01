@@ -16,9 +16,7 @@ public class PaymentService {
 
         Employee employee = employeeRepo.getAll().get(0);
 
-        double pay = employee.getPay();
-
-        return pay;
+        return employee.getPay();
 
     }
 

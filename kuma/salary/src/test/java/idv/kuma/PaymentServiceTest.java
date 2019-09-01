@@ -13,8 +13,8 @@ import static org.mockito.Mockito.when;
  */
 public class PaymentServiceTest {
 
-
     private final double DELTA = 0.001;
+
     private EmployeeRepo mockedEmployeeRepo;
     private PaymentService paymentService;
 
@@ -22,7 +22,7 @@ public class PaymentServiceTest {
     public void When_Annual_Then_Direct_AnnualPay() {
 
         prepareEmployRepo(
-                new Employee(new AnnualPay(300))
+                new AnnuallyPaidEmployee(new AnnualPay(300))
         );
 
         runAndCheck(300);
@@ -33,7 +33,7 @@ public class PaymentServiceTest {
 
 
         prepareEmployRepo(
-                new Employee(new MonthlyPay(10))
+                new MonthlyPaidEmployee(new MonthlyPay(10))
         );
 
         runAndCheck(120);

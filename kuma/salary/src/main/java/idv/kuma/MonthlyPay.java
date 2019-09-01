@@ -1,13 +1,13 @@
 package idv.kuma;
 
 public class MonthlyPay {
-    private final double monthlyPay;
+    private final double amount;
 
-    public MonthlyPay(double monthlyPay) {
-        this.monthlyPay = monthlyPay;
+    public MonthlyPay(double amount) {
+        this.amount = amount;
     }
 
-    public double getMonthlyPay() {
-        return monthlyPay;
+    public double getAmount() {
+        return amount;
     }
 }

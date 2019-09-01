@@ -1,13 +1,13 @@
 package idv.kuma;
 
 public class AnnualPay {
-    private final double annualPay;
+    private final double amount;
 
-    public AnnualPay(double annualPay) {
-        this.annualPay = annualPay;
+    public AnnualPay(double amount) {
+        this.amount = amount;
     }
 
-    public double getAnnualPay() {
-        return annualPay;
+    public double getAmount() {
+        return amount;
     }
 }
