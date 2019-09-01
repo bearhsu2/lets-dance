@@ -40,6 +40,17 @@ public class PaymentServiceTest {
         runAndCheck(120);
     }
 
+    @Test
+    public void When_Hourly_Then_HourlyPay_Times_Hours() {
+
+
+        prepareEmployRepo(
+                new HourlyPaidEmployee(new HourlyPay(100), 9)
+        );
+
+        runAndCheck(900);
+    }
+
     private void prepareEmployRepo(Employee... employees) {
         mockedEmployeeRepo = Mockito.mock(EmployeeRepo.class);
 
