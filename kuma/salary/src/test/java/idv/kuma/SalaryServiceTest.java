@@ -17,13 +17,13 @@ public class SalaryServiceTest {
     @Test
     public void When_Annual_Then_Direct_AnnualSalary() {
 
-        EmployeeRepo employeeRepo = Mockito.mock(EmployeeRepo.class);
-        when(employeeRepo.getAll()).thenReturn(Arrays.asList(
+        EmployeeRepo mockedEmployeeRepo = Mockito.mock(EmployeeRepo.class);
+        when(mockedEmployeeRepo.getAll()).thenReturn(Arrays.asList(
                 new Employee(300)
         ));
 
 
-        SalaryService salaryService = new SalaryService(employeeRepo);
+        SalaryService salaryService = new SalaryService(mockedEmployeeRepo);
 
         Assert.assertEquals(300, salaryService.getAll(), 0.001);
     }

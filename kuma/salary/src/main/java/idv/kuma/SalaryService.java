@@ -7,7 +7,6 @@ import java.util.List;
  */
 public class SalaryService {
 
-
     private EmployeeRepo employeeRepo;
 
     public SalaryService(EmployeeRepo employeeRepo) {
@@ -16,7 +15,9 @@ public class SalaryService {
 
     public double getAll() {
 
-        return 0.0;
+        double pay = employeeRepo.getAll().get(0).annualPay;
+
+        return pay;
 
     }
 

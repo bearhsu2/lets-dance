@@ -13,5 +13,6 @@ public class Employee {
 
 
     public Employee(double annualPay) {
+        this.annualPay = annualPay;
     }
 }
