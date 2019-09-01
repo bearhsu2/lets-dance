@@ -15,18 +15,33 @@ public class PaymentServiceTest {
 
 
     private final double DELTA = 0.001;
+    private EmployeeRepo mockedEmployeeRepo;
+    private PaymentService paymentService;
 
     @Test
     public void When_Annual_Then_Direct_AnnualPay() {
 
-        EmployeeRepo mockedEmployeeRepo = prepareEmployeeRepo(
+        prepareEmployRepo(
                 new Employee(new AnnualPay(300))
         );
 
+        runAndCheck(300);
+    }
 
-        PaymentService paymentService = new PaymentService(mockedEmployeeRepo);
+    private void prepareEmployRepo(Employee... employees) {
+        mockedEmployeeRepo = Mockito.mock(EmployeeRepo.class);
 
-        Assert.assertEquals(300, paymentService.getAll(), DELTA);
+        when(mockedEmployeeRepo.getAll()).thenReturn(
+                Arrays.asList(
+                        employees
+                )
+        );
+    }
+
+    private void runAndCheck(int expectedPayment) {
+        paymentService = new PaymentService(mockedEmployeeRepo);
+
+        Assert.assertEquals(expectedPayment, paymentService.getAll(), DELTA);
     }
 
 
@@ -34,23 +49,11 @@ public class PaymentServiceTest {
     public void When_Monthly_Then_MonthlyPay_Times_12() {
 
 
-        EmployeeRepo mockedEmployeeRepo = prepareEmployeeRepo(
+        prepareEmployRepo(
                 new Employee(new MonthlyPay(10))
         );
 
-
-        PaymentService paymentService = new PaymentService(mockedEmployeeRepo);
-
-        Assert.assertEquals(120, paymentService.getAll(), DELTA);
-    }
-
-    private EmployeeRepo prepareEmployeeRepo(Employee... employees) {
-        EmployeeRepo mockedEmployeeRepo = Mockito.mock(EmployeeRepo.class);
-
-        when(mockedEmployeeRepo.getAll()).thenReturn(
-                Arrays.asList(employees)
-        );
-        return mockedEmployeeRepo;
+        runAndCheck(120);
     }
 
 }
