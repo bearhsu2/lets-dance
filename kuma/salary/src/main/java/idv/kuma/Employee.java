@@ -63,7 +63,7 @@ public class Employee {
     double getPay() {
 
         double pay = 0;
-        
+
 
         if (getAnnualPay() > 0) {
             pay = getAnnualPay();

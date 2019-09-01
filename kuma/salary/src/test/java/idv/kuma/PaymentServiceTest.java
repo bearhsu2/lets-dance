@@ -34,10 +34,8 @@ public class PaymentServiceTest {
     public void When_Monthly_Then_MonthlyPay_Times_12() {
 
 
-        Employee employee = new Employee(new AnnualPay(0));
-        employee.setMonthlyPay(10);
         EmployeeRepo mockedEmployeeRepo = prepareEmployeeRepo(
-                employee
+                new Employee(new MonthlyPay(10))
         );
 
 
