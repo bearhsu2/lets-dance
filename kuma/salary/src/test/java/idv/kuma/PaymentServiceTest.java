@@ -11,11 +11,11 @@ import static org.mockito.Mockito.when;
 /**
  * Unit test for simple App.
  */
-public class SalaryServiceTest {
+public class PaymentServiceTest {
 
 
     @Test
-    public void When_Annual_Then_Direct_AnnualSalary() {
+    public void When_Annual_Then_Direct_AnnualPay() {
 
         EmployeeRepo mockedEmployeeRepo = Mockito.mock(EmployeeRepo.class);
         when(mockedEmployeeRepo.getAll()).thenReturn(Arrays.asList(
@@ -23,9 +23,9 @@ public class SalaryServiceTest {
         ));
 
 
-        SalaryService salaryService = new SalaryService(mockedEmployeeRepo);
+        PaymentService paymentService = new PaymentService(mockedEmployeeRepo);
 
-        Assert.assertEquals(300, salaryService.getAll(), 0.001);
+        Assert.assertEquals(300, paymentService.getAll(), 0.001);
     }
 
 }
