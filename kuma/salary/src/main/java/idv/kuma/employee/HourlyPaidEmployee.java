@@ -3,16 +3,16 @@ package idv.kuma.employee;
 public class HourlyPaidEmployee implements Employee {
 
 
-    private HourlyPay hourlyPay;
+    private double hourlyAmount;
     private int hours;
 
-    public HourlyPaidEmployee(HourlyPay hourlyPay, int hours) {
-        this.hourlyPay = hourlyPay;
+    public HourlyPaidEmployee(double hourlyAmount, int hours) {
+        this.hourlyAmount = hourlyAmount;
         this.hours = hours;
     }
 
     @Override
     public double getPay() {
-        return hourlyPay.getHourlyPay() * hours;
+        return hourlyAmount * hours;
     }
 }
