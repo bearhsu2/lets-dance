@@ -3,25 +3,22 @@ package idv.kuma.employee;
 public class AnnuallyPaidEmployee implements Employee {
 
 
-    private double annualPay;
+    private double amount;
 
-
-    public AnnuallyPaidEmployee(AnnualPay annualPay) {
-        this.annualPay = annualPay.getAmount();
+    public AnnuallyPaidEmployee(double amount) {
+        this.amount = amount;
     }
 
-
-    public double getAnnualPay() {
-        return annualPay;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setAnnualPay(double annualPay) {
-        this.annualPay = annualPay;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
-
 
     @Override
     public double getPay() {
-        return annualPay;
+        return amount;
     }
 }

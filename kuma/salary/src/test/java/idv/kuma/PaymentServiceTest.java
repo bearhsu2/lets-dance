@@ -23,7 +23,7 @@ public class PaymentServiceTest {
     public void When_Annual_Then_Direct_AnnualPay() {
 
         prepareEmployRepo(
-                new AnnuallyPaidEmployee(new AnnualPay(300))
+                new AnnuallyPaidEmployee(300)
         );
 
         runAndCheck(300);
@@ -56,7 +56,7 @@ public class PaymentServiceTest {
 
 
         prepareEmployRepo(
-                new AnnuallyPaidEmployee(new AnnualPay(300)),
+                new AnnuallyPaidEmployee(300),
                 new MonthlyPaidEmployee(new MonthlyPay(10)),
                 new HourlyPaidEmployee(new HourlyPay(100), 9)
         );
