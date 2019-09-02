@@ -4,9 +4,10 @@ public class MonthlyPaidEmployee implements Employee {
 
     private double monthlyPay;
 
-    public MonthlyPaidEmployee(MonthlyPay monthlyPay) {
-        this.monthlyPay = monthlyPay.getAmount();
+    public MonthlyPaidEmployee(double monthlyPay) {
+        this.monthlyPay = monthlyPay;
     }
+
 
     @Override
     public double getPay() {
