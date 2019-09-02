@@ -2,9 +2,7 @@ package idv.kuma;
 
 import idv.kuma.employee.Employee;
 
-/**
- * Hello world!
- */
+
 public class PaymentService {
 
     private EmployeeRepo employeeRepo;
