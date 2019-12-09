@@ -1,6 +1,5 @@
 package idv.kuma.employee;
 
-public interface Employee {
+public class Employee {
 
-    double getPay();
 }
