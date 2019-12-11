@@ -1,13 +1,13 @@
 package idv.kuma;
 
-import idv.kuma.employee.Employee;
+import idv.kuma.employee.IEmployee;
 
 import java.util.List;
 
 public interface EmployeeRepo {
 
 
-    List<Employee> getAll();
+    List<IEmployee> getAll();
 
 
 }
