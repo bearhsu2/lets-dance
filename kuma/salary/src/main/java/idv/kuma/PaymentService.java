@@ -10,4 +10,7 @@ public class PaymentService {
     }
 
 
+    public double totalPaymentAmount() {
+        return 0;
+    }
 }
